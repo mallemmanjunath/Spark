@@ -21,6 +21,7 @@ schema = StructType([ \
  df = spark.createDataFrame(data=person_list,schema=schema)
  
  df.show(truncate=False)
+ #here truncate = false will not cut short the output data even if it does not fit in screen.
  
  df.printSchema()
  
