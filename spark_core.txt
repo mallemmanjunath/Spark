@@ -17,6 +17,7 @@ schema = StructType([ \
         StructField("id", IntegerType(), True), \
         StructField("gender", StringType(), True), \    
  ])
+ #in above code last boolean field is for "Nullable" if that is True then field can accept NULL values.
  
  df = spark.createDataFrame(data=person_list,schema=schema)
  
