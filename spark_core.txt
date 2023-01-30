@@ -2228,6 +2228,9 @@ only showing top 20 rows
 |          110|  8300|20308|
 +-------------+------+-----+
 
+
+# below "spark.conf" is used to set all kinds of config related properties. Here there setting threshold size for broadcast data used in broadcast joins to 104 MB or 104857600 Bytes.
+
 >>> from pyspark.sql.functions import *
 >>> spark.conf.set("spark.sql.autoBroadcastJoinThreshold", 104857600)
 >>> empDf.join(broadcast(deptDf), empDf.DEPARTMENT_ID == deptDf.DEPARTMENT_ID, "inner").select(empDf.EMPLOYEE_ID, empDf.DEPARTMENT_ID, deptDf.DEPARTMENT_NAME).show(100)
